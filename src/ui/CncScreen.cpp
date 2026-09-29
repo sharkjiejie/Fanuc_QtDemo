@@ -205,6 +205,7 @@ void CncScreen::mousePressEvent(QMouseEvent *event)
         } else if (index == 3) {
             controller_->resetParameters();
         } else if (index == 4) {
+            controller_->setParameterPageActive(false);
             setPage(QStringLiteral("POS"));
         }
         update();
@@ -223,6 +224,9 @@ void CncScreen::mousePressEvent(QMouseEvent *event)
         offsetMode_ = QStringLiteral("GEOMETRY");
     } else if (index == 1) {
         offsetMode_ = QStringLiteral("WEAR");
+    } else if (index == 2) {
+        controller_->setParameterPageActive(true);
+        setPage(QStringLiteral("SYSTEM"));
     }
     update();
 }
