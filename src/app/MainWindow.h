@@ -17,6 +17,9 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow() override;
 
+    void setPage(const QString &page);
+    void setMode(const QString &mode);
+
 private:
     void buildUi();
     void connectCallbacks();

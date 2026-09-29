@@ -11,6 +11,15 @@ int main(int argc, char *argv[])
     MainWindow window;
     window.show();
 
+    const QString demoPage = qEnvironmentVariable("CNC_DEMO_PAGE");
+    if (!demoPage.isEmpty()) {
+        window.setPage(demoPage);
+    }
+    const QString demoMode = qEnvironmentVariable("CNC_DEMO_MODE");
+    if (!demoMode.isEmpty()) {
+        window.setMode(demoMode);
+    }
+
     const QString screenshotPath = qEnvironmentVariable("CNC_DEMO_SCREENSHOT");
     if (!screenshotPath.isEmpty()) {
         QTimer::singleShot(200, &window, [&window, &app, screenshotPath]() {

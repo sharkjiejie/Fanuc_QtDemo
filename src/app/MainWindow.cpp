@@ -30,6 +30,23 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow() = default;
 
+void MainWindow::setPage(const QString &page)
+{
+    if (!screen_) {
+        return;
+    }
+    screen_->setPage(page);
+    controller_->setParameterPageActive(
+        page == QStringLiteral("SYSTEM"));
+}
+
+void MainWindow::setMode(const QString &mode)
+{
+    if (controller_) {
+        controller_->setModeCode(mode);
+    }
+}
+
 void MainWindow::buildUi()
 {
     QWidget *central = new QWidget(this);
