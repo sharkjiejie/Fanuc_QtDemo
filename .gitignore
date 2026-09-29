@@ -1,0 +1,34 @@
+# Qt Creator
+.qtcreator/
+*.pro.user
+*.pro.user.*
+CMakeLists.txt.user
+CMakeLists.txt.user.*
+
+# CMake and compiler output
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+*.o
+*.obj
+*.exe
+*.dll
+*.a
+*.lib
+*.pdb
+
+# Runtime data
+*.db
+*.db-shm
+*.db-wal
+programs/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*~
